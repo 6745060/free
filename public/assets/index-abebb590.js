@@ -1,0 +1,1 @@
+function n(e){return Object.prototype.toString.call(e)==="[object String]"}function i(e){return e.length===0?!1:e.includes("@")?/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e):/^1[3-9]\d{9}$/.test(e)}export{n as i,i as v};

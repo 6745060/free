@@ -1,0 +1,1 @@
+import{r as a}from"./index.83cc6034.js";function r(e){return a.get({url:"/package/list",params:e})}function g(e){return a.get({url:"/package/all",params:e})}function u(e){return a.get({url:"/package/detail",params:e})}function n(e){return a.post({url:"/package/update",params:e})}function c(e){return a.get({url:"/package/delete",params:e})}export{u as a,r as b,g,c as r,n as s};
