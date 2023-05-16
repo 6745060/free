@@ -23,22 +23,22 @@ DROP TABLE IF EXISTS `admins`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `admins` (
-                          `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-                          `root` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否超级管理员 0-否 1-是',
-                          `name` varchar(32) NOT NULL DEFAULT '' COMMENT '名称',
-                          `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '用户头像',
-                          `account` varchar(32) NOT NULL DEFAULT '' COMMENT '账号',
-                          `password` varchar(255) NOT NULL COMMENT '密码',
-                          `login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
-                          `login_ip` varchar(15) DEFAULT '' COMMENT '最后登录ip',
-                          `multipoint_login` tinyint(1) unsigned DEFAULT '1' COMMENT '是否支持多处登录：1-是；0-否；',
-                          `disable` tinyint(1) unsigned DEFAULT '0' COMMENT '是否禁用：0-否；1-是；',
-                          `created_at` datetime NOT NULL COMMENT '创建时间',
-                          `updated_at` datetime DEFAULT NULL COMMENT '修改时间',
-                          `deleted_at` datetime DEFAULT NULL COMMENT '删除时间',
-                          PRIMARY KEY (`id`),
-                          UNIQUE KEY `account_index` (`account`),
-                          KEY `root_index` (`root`)
+  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
+  `root` tinyint(1) unsigned NOT NULL DEFAULT '0' COMMENT '是否超级管理员 0-否 1-是',
+  `name` varchar(32) NOT NULL DEFAULT '' COMMENT '名称',
+  `avatar` varchar(255) NOT NULL DEFAULT '' COMMENT '用户头像',
+  `account` varchar(32) NOT NULL DEFAULT '' COMMENT '账号',
+  `password` varchar(255) NOT NULL COMMENT '密码',
+  `login_time` datetime DEFAULT NULL COMMENT '最后登录时间',
+  `login_ip` varchar(15) DEFAULT '' COMMENT '最后登录ip',
+  `multipoint_login` tinyint(1) unsigned DEFAULT '1' COMMENT '是否支持多处登录：1-是；0-否；',
+  `disable` tinyint(1) unsigned DEFAULT '0' COMMENT '是否禁用：0-否；1-是；',
+  `created_at` datetime NOT NULL COMMENT '创建时间',
+  `updated_at` datetime DEFAULT NULL COMMENT '修改时间',
+  `deleted_at` datetime DEFAULT NULL COMMENT '删除时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `account_index` (`account`),
+  KEY `root_index` (`root`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='管理员表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -60,13 +60,13 @@ DROP TABLE IF EXISTS `chat_sessions`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `chat_sessions` (
-                                 `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-                                 `session_uuid` varchar(64) DEFAULT NULL,
-                                 `chat_id` int(10) unsigned DEFAULT NULL,
-                                 `parent_message_id` varchar(64) DEFAULT NULL,
-                                 `created_at` datetime DEFAULT NULL,
-                                 `updated_at` datetime DEFAULT NULL,
-                                 PRIMARY KEY (`id`)
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `session_uuid` varchar(64) DEFAULT NULL,
+  `chat_id` int(10) unsigned DEFAULT NULL,
+  `parent_message_id` varchar(64) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -87,17 +87,17 @@ DROP TABLE IF EXISTS `chat_titles`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `chat_titles` (
-                               `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-                               `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',
-                               `title` varchar(255) DEFAULT NULL,
-                               `session_uuid` varchar(255) DEFAULT NULL,
-                               `message_id` varchar(255) DEFAULT NULL,
-                               `status` tinyint(4) DEFAULT NULL,
-                               `created_at` datetime DEFAULT NULL,
-                               `updated_at` datetime DEFAULT NULL,
-                               PRIMARY KEY (`id`),
-                               KEY `chat_titles_message_id_index` (`message_id`),
-                               KEY `chat_titles_user_id_index` (`user_id`)
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户id',
+  `title` varchar(255) DEFAULT NULL,
+  `session_uuid` varchar(255) DEFAULT NULL,
+  `message_id` varchar(255) DEFAULT NULL,
+  `status` tinyint(4) DEFAULT NULL,
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `chat_titles_message_id_index` (`message_id`),
+  KEY `chat_titles_user_id_index` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='对话窗口表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -118,28 +118,28 @@ DROP TABLE IF EXISTS `chats`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `chats` (
-                         `id` int(11) NOT NULL AUTO_INCREMENT,
-                         `user_id` int(11) DEFAULT '0' COMMENT '用户id',
-                         `key_id` int(11) NOT NULL DEFAULT '0' COMMENT 'key池id',
-                         `model` varchar(20) NOT NULL COMMENT '所用模型',
-                         `charge_mode` varchar(10) DEFAULT NULL COMMENT '计费模式',
-                         `charge_rate` int(11) DEFAULT '0' COMMENT '换算倍数',
-                         `role` varchar(20) DEFAULT NULL COMMENT '角色',
-                         `prompt` varchar(250) NOT NULL COMMENT '问题',
-                         `content` text COMMENT '回答',
-                         `prompt_tokens` int(11) NOT NULL DEFAULT '0',
-                         `completion_tokens` int(11) DEFAULT '0',
-                         `total_tokens` int(11) NOT NULL DEFAULT '0' COMMENT '消耗总tokens',
-                         `total_points` int(11) NOT NULL DEFAULT '0' COMMENT '消耗总积分',
-                         `created_at` datetime DEFAULT NULL,
-                         `updated_at` datetime DEFAULT NULL,
-                         `deleted_at` datetime DEFAULT NULL,
-                         PRIMARY KEY (`id`),
-                         KEY `chats_user_id_index` (`user_id`),
-                         KEY `chats_key_id_index` (`key_id`),
-                         KEY `chats_model_index` (`model`),
-                         KEY `chats_prompt_index` (`prompt`),
-                         KEY `chats_total_tokens_index` (`total_tokens`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT '0' COMMENT '用户id',
+  `key_id` int(11) NOT NULL DEFAULT '0' COMMENT 'key池id',
+  `model` varchar(20) NOT NULL COMMENT '所用模型',
+  `charge_mode` varchar(10) DEFAULT NULL COMMENT '计费模式',
+  `charge_rate` int(11) DEFAULT '0' COMMENT '换算倍数',
+  `role` varchar(20) DEFAULT NULL COMMENT '角色',
+  `prompt` varchar(250) NOT NULL COMMENT '问题',
+  `content` text COMMENT '回答',
+  `prompt_tokens` int(11) NOT NULL DEFAULT '0',
+  `completion_tokens` int(11) DEFAULT '0',
+  `total_tokens` int(11) NOT NULL DEFAULT '0' COMMENT '消耗总tokens',
+  `total_points` int(11) NOT NULL DEFAULT '0' COMMENT '消耗总积分',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `chats_user_id_index` (`user_id`),
+  KEY `chats_key_id_index` (`key_id`),
+  KEY `chats_model_index` (`model`),
+  KEY `chats_prompt_index` (`prompt`),
+  KEY `chats_total_tokens_index` (`total_tokens`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -160,17 +160,17 @@ DROP TABLE IF EXISTS `configs`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `configs` (
-                           `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
-                           `type` varchar(30) DEFAULT NULL,
-                           `name` varchar(60) DEFAULT NULL COMMENT '名字',
-                           `desc` varchar(50) DEFAULT NULL COMMENT '描述信息',
-                           `value` text,
-                           `created_at` int(10) unsigned DEFAULT NULL,
-                           `updated_at` int(10) unsigned DEFAULT NULL,
-                           PRIMARY KEY (`id`),
-                           KEY `type_index` (`type`),
-                           KEY `name_index` (`name`),
-                           KEY `type_name_index` (`type`,`name`)
+  `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `type` varchar(30) DEFAULT NULL,
+  `name` varchar(60) DEFAULT NULL COMMENT '名字',
+  `desc` varchar(50) DEFAULT NULL COMMENT '描述信息',
+  `value` text,
+  `created_at` int(10) unsigned DEFAULT NULL,
+  `updated_at` int(10) unsigned DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `type_index` (`type`),
+  KEY `name_index` (`name`),
+  KEY `type_name_index` (`type`,`name`)
 ) ENGINE=InnoDB AUTO_INCREMENT=521 DEFAULT CHARSET=utf8mb4 COMMENT='配置表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -192,15 +192,15 @@ DROP TABLE IF EXISTS `diy_reply`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `diy_reply` (
-                             `id` int(11) NOT NULL AUTO_INCREMENT,
-                             `keywords` varchar(50) NOT NULL,
-                             `content` text,
-                             `is_disable` tinyint(4) DEFAULT '0',
-                             `created_at` datetime DEFAULT NULL,
-                             `updated_at` datetime DEFAULT NULL,
-                             `deleted_at` datetime DEFAULT NULL,
-                             PRIMARY KEY (`id`),
-                             UNIQUE KEY `diy_reply_keywords_uindex` (`keywords`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `keywords` varchar(50) NOT NULL,
+  `content` text,
+  `is_disable` tinyint(4) DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `diy_reply_keywords_uindex` (`keywords`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -214,28 +214,21 @@ INSERT INTO `diy_reply` VALUES (3,'你是谁','我是一个聊天机器人，被
 /*!40000 ALTER TABLE `diy_reply` ENABLE KEYS */;
 UNLOCK TABLES;
 
---
--- Table structure for table `inviters`
---
-
-DROP TABLE IF EXISTS `inviters`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `inviters` (
-                            `id` int(11) NOT NULL AUTO_INCREMENT,
-                            `user_id` int(11) DEFAULT '0' COMMENT '用户id',
-                            `user_name` varchar(50) DEFAULT NULL,
-                            `invitee_id` int(11) DEFAULT '0' COMMENT '被邀请者id',
-                            `invitee_name` varchar(50) DEFAULT NULL,
-                            `user_points`    int default 0 not null comment '邀请者获得积分',
-                            `invitee_points` int default 0 not null comment '被邀请者获得积分',
-                            `created_at` datetime DEFAULT NULL,
-                            `updated_at` datetime DEFAULT NULL,
-                            `deleted_at` datetime DEFAULT NULL,
-                            PRIMARY KEY (`id`),
-                            UNIQUE KEY `inviters_id_uindex` (`id`),
-                            UNIQUE KEY `inviters_invitee_id_uindex` (`invitee_id`),
-                            KEY `inviters_user_id_index` (`user_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) DEFAULT '0' COMMENT '用户id',
+  `user_name` varchar(50) DEFAULT NULL,
+  `invitee_id` int(11) DEFAULT '0' COMMENT '被邀请者id',
+  `invitee_name` varchar(50) DEFAULT NULL,
+  `user_points`    int default 0 not null comment '邀请者获得积分',
+  `invitee_points` int default 0 not null comment '被邀请者获得积分',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `inviters_id_uindex` (`id`),
+  UNIQUE KEY `inviters_invitee_id_uindex` (`invitee_id`),
+  KEY `inviters_user_id_index` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='邀请者表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -256,24 +249,24 @@ DROP TABLE IF EXISTS `keys`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `keys` (
-                        `id` int(11) NOT NULL AUTO_INCREMENT,
-                        `key` varchar(250) NOT NULL COMMENT '密钥内容',
-                        `model` varchar(50) DEFAULT NULL COMMENT '所属模型',
-                        `proxy_url` varchar(250) DEFAULT NULL COMMENT '代理地址',
-                        `status` tinyint(3) NOT NULL DEFAULT '10' COMMENT '状态{10:正常, 20:余额或次数不足, 30:被封禁 40:已过期}',
-                        `tokens` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000',
-                        `times` int(11) DEFAULT '0' COMMENT '有效次数',
-                        `is_plus` tinyint(2) DEFAULT '0' COMMENT '是否是plus{0:否, 1:是}',
-                        `is_disable` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否禁用 {0:否,1:是}',
-                        `created_at` datetime DEFAULT NULL,
-                        `updated_at` datetime DEFAULT NULL,
-                        `deleted_at` datetime DEFAULT NULL,
-                        PRIMARY KEY (`id`),
-                        UNIQUE KEY `keys_id_uindex` (`id`),
-                        KEY `type_index` (`is_plus`),
-                        KEY `keys_status_index` (`status`),
-                        KEY `keys_is_disable_index` (`is_disable`),
-                        KEY `keys_model_index` (`model`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `key` varchar(250) NOT NULL COMMENT '密钥内容',
+  `model` varchar(50) DEFAULT NULL COMMENT '所属模型',
+  `proxy_url` varchar(250) DEFAULT NULL COMMENT '代理地址',
+  `status` tinyint(3) NOT NULL DEFAULT '10' COMMENT '状态{10:正常, 20:余额或次数不足, 30:被封禁 40:已过期}',
+  `tokens` int(10) unsigned zerofill NOT NULL DEFAULT '0000000000',
+  `times` int(11) DEFAULT '0' COMMENT '有效次数',
+  `is_plus` tinyint(2) DEFAULT '0' COMMENT '是否是plus{0:否, 1:是}',
+  `is_disable` tinyint(4) NOT NULL DEFAULT '0' COMMENT '是否禁用 {0:否,1:是}',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `keys_id_uindex` (`id`),
+  KEY `type_index` (`is_plus`),
+  KEY `keys_status_index` (`status`),
+  KEY `keys_is_disable_index` (`is_disable`),
+  KEY `keys_model_index` (`model`)
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -295,22 +288,23 @@ DROP TABLE IF EXISTS `models`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `models` (
-                          `id` int(11) NOT NULL AUTO_INCREMENT,
-                          `driver` varchar(50) NOT NULL COMMENT 'AI驱动',
-                          `name` varchar(50) DEFAULT NULL COMMENT '模型',
-                          `charge_mode` varchar(10) NOT NULL COMMENT '计费模式，times:次数 tokens:流量',
-                          `charge_rate` int(11) DEFAULT '1' COMMENT '计费比率',
-                          `sort` int(11) NOT NULL DEFAULT '0',
-                          `is_disable` tinyint(3) NOT NULL DEFAULT '0',
-                          `created_at` datetime DEFAULT NULL,
-                          `updated_at` datetime DEFAULT NULL,
-                          `deleted_at` datetime DEFAULT NULL,
-                          PRIMARY KEY (`id`),
-                          UNIQUE KEY `package_models_id_uindex` (`id`),
-                          KEY `models_deleted_at_index` (`deleted_at`),
-                          KEY `models_driver_index` (`driver`),
-                          KEY `models_name_index` (`name`),
-                          KEY `models_charge_mode_index` (`charge_mode`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `driver` varchar(50) NOT NULL COMMENT 'AI驱动',
+  `name` varchar(50) DEFAULT NULL COMMENT '模型',
+   `max_tokens`  int  default 0 not null,
+  `charge_mode` varchar(10) NOT NULL COMMENT '计费模式，times:次数 tokens:流量',
+  `charge_rate` int(11) DEFAULT '1' COMMENT '计费比率',
+  `sort` int(11) NOT NULL DEFAULT '0',
+  `is_disable` tinyint(3) NOT NULL DEFAULT '0',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `package_models_id_uindex` (`id`),
+  KEY `models_deleted_at_index` (`deleted_at`),
+  KEY `models_driver_index` (`driver`),
+  KEY `models_name_index` (`name`),
+  KEY `models_charge_mode_index` (`charge_mode`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -320,7 +314,7 @@ CREATE TABLE `models` (
 
 LOCK TABLES `models` WRITE;
 /*!40000 ALTER TABLE `models` DISABLE KEYS */;
-INSERT INTO `models` VALUES (1,'openai','gpt-3.5-turbo','times',100,100,0,'2023-05-14 19:22:02','2023-05-15 11:39:34',NULL),(2,'openai','gpt-4','tokens',6,200,0,'2023-05-14 19:23:16','2023-05-15 14:29:02',NULL);
+INSERT INTO `models` VALUES (1,'openai','gpt-3.5-turbo',4096,'times',100,100,0,'2023-05-14 19:22:02','2023-05-15 11:39:34',NULL),(2,'openai','gpt-4',8192,'tokens',6,200,0,'2023-05-14 19:23:16','2023-05-15 14:29:02',NULL);
 /*!40000 ALTER TABLE `models` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -332,18 +326,18 @@ DROP TABLE IF EXISTS `notices`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `notices` (
-                           `id` int(11) NOT NULL AUTO_INCREMENT,
-                           `title` varchar(50) DEFAULT NULL COMMENT '公告标题',
-                           `content` text COMMENT '公告内容',
-                           `is_disable` tinyint(3) DEFAULT '0' COMMENT '使用禁用',
-                           `expired_at` date DEFAULT NULL COMMENT '失效日期',
-                           `created_at` datetime DEFAULT NULL,
-                           `updated_at` datetime DEFAULT NULL,
-                           `deleted_at` datetime DEFAULT NULL,
-                           PRIMARY KEY (`id`),
-                           UNIQUE KEY `notices_id_uindex` (`id`),
-                           KEY `notices_deleted_at_index` (`deleted_at`),
-                           KEY `notices_is_disable_index` (`is_disable`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL COMMENT '公告标题',
+  `content` text COMMENT '公告内容',
+  `is_disable` tinyint(3) DEFAULT '0' COMMENT '使用禁用',
+  `expired_at` date DEFAULT NULL COMMENT '失效日期',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `notices_id_uindex` (`id`),
+  KEY `notices_deleted_at_index` (`deleted_at`),
+  KEY `notices_is_disable_index` (`is_disable`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COMMENT='公告表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -365,27 +359,27 @@ DROP TABLE IF EXISTS `package_cards`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `package_cards` (
-                                 `id` int(11) NOT NULL AUTO_INCREMENT,
-                                 `card_no` varchar(250) NOT NULL COMMENT '卡密号',
-                                 `package_id` int(11) DEFAULT '0' COMMENT '套餐id',
-                                 `package_name` varchar(50) DEFAULT NULL COMMENT '套餐名',
-                                 `price` decimal(10,2) DEFAULT NULL COMMENT '卡券价格',
-                                 `duration` int(11) DEFAULT '0' COMMENT '有效时长，单位天，0代表永久',
-                                 `total_points` int(11) NOT NULL DEFAULT '0' COMMENT '包含总积分',
-                                 `batch_id` int(11) DEFAULT '0' COMMENT '批次ID',
-                                 `batch_size` int(11) DEFAULT '0' COMMENT '批次导出数量',
-                                 `desc` varchar(255) DEFAULT NULL COMMENT '描述信息',
-                                 `user_id` int(11) DEFAULT '0' COMMENT '用户id',
-                                 `binded_at` datetime DEFAULT NULL COMMENT '绑定时间',
-                                 `expired_at` datetime DEFAULT NULL COMMENT '失效时间',
-                                 `created_at` datetime DEFAULT NULL COMMENT '创建时间',
-                                 `updated_at` datetime DEFAULT NULL,
-                                 `deleted_at` datetime DEFAULT NULL,
-                                 UNIQUE KEY `package_cards_id_uindex` (`id`),
-                                 KEY `cards_card_no_index` (`card_no`),
-                                 KEY `cards_package_id_index` (`package_id`),
-                                 KEY `package_cards_deleted_at_index` (`deleted_at`),
-                                 KEY `package_cards_user_id_index` (`user_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `card_no` varchar(250) NOT NULL COMMENT '卡密号',
+  `package_id` int(11) DEFAULT '0' COMMENT '套餐id',
+  `package_name` varchar(50) DEFAULT NULL COMMENT '套餐名',
+  `price` decimal(10,2) DEFAULT NULL COMMENT '卡券价格',
+  `duration` int(11) DEFAULT '0' COMMENT '有效时长，单位天，0代表永久',
+  `total_points` int(11) NOT NULL DEFAULT '0' COMMENT '包含总积分',
+  `batch_id` int(11) DEFAULT '0' COMMENT '批次ID',
+  `batch_size` int(11) DEFAULT '0' COMMENT '批次导出数量',
+  `desc` varchar(255) DEFAULT NULL COMMENT '描述信息',
+  `user_id` int(11) DEFAULT '0' COMMENT '用户id',
+  `binded_at` datetime DEFAULT NULL COMMENT '绑定时间',
+  `expired_at` datetime DEFAULT NULL COMMENT '失效时间',
+  `created_at` datetime DEFAULT NULL COMMENT '创建时间',
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  UNIQUE KEY `package_cards_id_uindex` (`id`),
+  KEY `cards_card_no_index` (`card_no`),
+  KEY `cards_package_id_index` (`package_id`),
+  KEY `package_cards_deleted_at_index` (`deleted_at`),
+  KEY `package_cards_user_id_index` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='卡券表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -406,26 +400,26 @@ DROP TABLE IF EXISTS `packages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `packages` (
-                            `id` int(11) NOT NULL AUTO_INCREMENT,
-                            `type` varchar(10) DEFAULT 'tokens' COMMENT '套餐类型:{times:次数，tokens：流量}',
-                            `name` varchar(250) DEFAULT NULL COMMENT '套餐名',
-                            `icon` varchar(250) DEFAULT NULL COMMENT '套餐图标',
-                            `market_price` decimal(10,2) DEFAULT NULL COMMENT '市场价',
-                            `price` decimal(10,2) DEFAULT NULL COMMENT '优惠价',
-                            `desc` text COMMENT '套餐描述',
-                            `total_points` int(11) DEFAULT '0' COMMENT '包含总积分',
-                            `duration` int(11) DEFAULT '0' COMMENT '有效时长，单位天，0代表永久',
-                            `buy_method` varchar(50) NOT NULL DEFAULT 'jump' COMMENT '购买方式:{online:在线，jump:跳转}',
-                            `jump_url` varchar(250) NOT NULL DEFAULT '' COMMENT '跳转链接',
-                            `sort` int(11) DEFAULT '0' COMMENT '排序字段，越大越靠前',
-                            `is_disable` tinyint(4) DEFAULT '0' COMMENT '是否禁用',
-                            `created_at` datetime DEFAULT NULL,
-                            `updated_at` datetime DEFAULT NULL,
-                            `deleted_at` datetime DEFAULT NULL,
-                            PRIMARY KEY (`id`),
-                            UNIQUE KEY `packages_id_uindex` (`id`),
-                            KEY `packages_is_disable_index` (`is_disable`),
-                            KEY `packages_type_index` (`type`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type` varchar(10) DEFAULT 'tokens' COMMENT '套餐类型:{times:次数，tokens：流量}',
+  `name` varchar(250) DEFAULT NULL COMMENT '套餐名',
+  `icon` varchar(250) DEFAULT NULL COMMENT '套餐图标',
+  `market_price` decimal(10,2) DEFAULT NULL COMMENT '市场价',
+  `price` decimal(10,2) DEFAULT NULL COMMENT '优惠价',
+  `desc` text COMMENT '套餐描述',
+  `total_points` int(11) DEFAULT '0' COMMENT '包含总积分',
+  `duration` int(11) DEFAULT '0' COMMENT '有效时长，单位天，0代表永久',
+  `buy_method` varchar(50) NOT NULL DEFAULT 'jump' COMMENT '购买方式:{online:在线，jump:跳转}',
+  `jump_url` varchar(250) NOT NULL DEFAULT '' COMMENT '跳转链接',
+  `sort` int(11) DEFAULT '0' COMMENT '排序字段，越大越靠前',
+  `is_disable` tinyint(4) DEFAULT '0' COMMENT '是否禁用',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `packages_id_uindex` (`id`),
+  KEY `packages_is_disable_index` (`is_disable`),
+  KEY `packages_type_index` (`type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8mb4 COMMENT='套餐表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -447,20 +441,20 @@ DROP TABLE IF EXISTS `points`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `points` (
-                          `id` int(11) NOT NULL AUTO_INCREMENT,
-                          `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户',
-                          `from` varchar(10) NOT NULL COMMENT '来源',
-                          `points` int(11) NOT NULL DEFAULT '0' COMMENT '积分',
-                          `desc` varchar(250) DEFAULT NULL COMMENT '描述',
-                          `created_at` datetime DEFAULT NULL,
-                          `updated_at` datetime DEFAULT NULL,
-                          `deleted_at` datetime DEFAULT NULL,
-                          `expired_at` datetime DEFAULT NULL COMMENT '失效时间',
-                          PRIMARY KEY (`id`),
-                          UNIQUE KEY `points_id_uindex` (`id`),
-                          KEY `points_from_index` (`from`),
-                          KEY `points_points_index` (`points`),
-                          KEY `points_user_id_index` (`user_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `user_id` int(11) NOT NULL DEFAULT '0' COMMENT '用户',
+  `from` varchar(10) NOT NULL COMMENT '来源',
+  `points` int(11) NOT NULL DEFAULT '0' COMMENT '积分',
+  `desc` varchar(250) DEFAULT NULL COMMENT '描述',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  `expired_at` datetime DEFAULT NULL COMMENT '失效时间',
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `points_id_uindex` (`id`),
+  KEY `points_from_index` (`from`),
+  KEY `points_points_index` (`points`),
+  KEY `points_user_id_index` (`user_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='积分表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -481,18 +475,18 @@ DROP TABLE IF EXISTS `prompt_types`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prompt_types` (
-                                `id` int(11) NOT NULL AUTO_INCREMENT,
-                                `title` varchar(50) DEFAULT NULL COMMENT '场景名',
-                                `desc` varchar(250) DEFAULT NULL COMMENT '场景描述',
-                                `icon` varchar(250) DEFAULT NULL COMMENT '场景图标',
-                                `sort` int(11) DEFAULT '0' COMMENT '排序',
-                                `is_disable` tinyint(1) DEFAULT '0' COMMENT '是否禁用',
-                                `created_at` datetime DEFAULT NULL,
-                                `updated_at` datetime DEFAULT NULL,
-                                `deleted_at` datetime DEFAULT NULL,
-                                PRIMARY KEY (`id`),
-                                KEY `prompt_scenes_is_disable_index` (`is_disable`),
-                                KEY `prompt_scenes_title_index` (`title`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `title` varchar(50) DEFAULT NULL COMMENT '场景名',
+  `desc` varchar(250) DEFAULT NULL COMMENT '场景描述',
+  `icon` varchar(250) DEFAULT NULL COMMENT '场景图标',
+  `sort` int(11) DEFAULT '0' COMMENT '排序',
+  `is_disable` tinyint(1) DEFAULT '0' COMMENT '是否禁用',
+  `created_at` datetime DEFAULT NULL,
+  `updated_at` datetime DEFAULT NULL,
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `prompt_scenes_is_disable_index` (`is_disable`),
+  KEY `prompt_scenes_title_index` (`title`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COMMENT='prompt场景表';
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -514,23 +508,23 @@ DROP TABLE IF EXISTS `prompts`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `prompts` (
-                           `id` int(11) NOT NULL AUTO_INCREMENT,
-                           `type_id` int(11) DEFAULT '0' COMMENT '分类id',
-                           `key` varchar(50) NOT NULL COMMENT 'prompt提示词',
-                           `value` text NOT NULL COMMENT 'prompt内容',
-                           `desc` varchar(250) DEFAULT NULL COMMENT '描述信息',
-                           `icon` varchar(250) DEFAULT NULL COMMENT '图标',
-                           `is_disable` tinyint(1) NOT NULL DEFAULT '0',
-                           `sort` int(11) DEFAULT '0' COMMENT '排序数字，越大越靠前',
-                           `created_at` timestamp NULL DEFAULT NULL,
-                           `updated_at` timestamp NULL DEFAULT NULL,
-                           `deleted_at` timestamp NULL DEFAULT NULL,
-                           PRIMARY KEY (`id`),
-                           UNIQUE KEY `prompts_id_uindex` (`id`),
-                           KEY `prompts_sort_index` (`sort`),
-                           KEY `prompts_is_disable_index` (`is_disable`),
-                           KEY `prompts_key_index` (`key`),
-                           KEY `prompts_scene_id_index` (`type_id`)
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_id` int(11) DEFAULT '0' COMMENT '分类id',
+  `key` varchar(50) NOT NULL COMMENT 'prompt提示词',
+  `value` text NOT NULL COMMENT 'prompt内容',
+  `desc` varchar(250) DEFAULT NULL COMMENT '描述信息',
+  `icon` varchar(250) DEFAULT NULL COMMENT '图标',
+  `is_disable` tinyint(1) NOT NULL DEFAULT '0',
+  `sort` int(11) DEFAULT '0' COMMENT '排序数字，越大越靠前',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `prompts_id_uindex` (`id`),
+  KEY `prompts_sort_index` (`sort`),
+  KEY `prompts_is_disable_index` (`is_disable`),
+  KEY `prompts_key_index` (`key`),
+  KEY `prompts_scene_id_index` (`type_id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -552,31 +546,31 @@ DROP TABLE IF EXISTS `users`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `users` (
-                         `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
-                         `sn` varchar(100) DEFAULT NULL COMMENT '用户编号',
-                         `account` varchar(50) DEFAULT NULL COMMENT '用户账号',
-                         `name` varchar(255) NOT NULL COMMENT '用户昵称',
-                         `avatar` varchar(250) DEFAULT NULL COMMENT '用户头像',
-                         `email` varchar(255) NOT NULL COMMENT '邮箱',
-                         `mobile` varchar(20) DEFAULT NULL COMMENT '手机号',
-                         `password` varchar(255) DEFAULT NULL COMMENT '登录密码',
-                         `device` tinyint(4) DEFAULT '0' COMMENT '注册设备: [10:微信小程序 20:微信公众号 30:手机H5 40:电脑PC 50:苹果APP 60:安卓APP]',
-                         `invite_code` varchar(50) DEFAULT NULL COMMENT '邀请码',
-                         `is_disable` tinyint(1) DEFAULT '0' COMMENT '是否禁用: [0=否, 1=是]',
-                         `level` int(3) NOT NULL DEFAULT '10' COMMENT '会员等级，备用',
-                         `created_at` timestamp NULL DEFAULT NULL,
-                         `updated_at` timestamp NULL DEFAULT NULL,
-                         `deleted_at` timestamp NULL DEFAULT NULL,
-                         PRIMARY KEY (`id`),
-                         UNIQUE KEY `users_id_uindex` (`id`),
-                         UNIQUE KEY `users_sn_uindex` (`sn`),
-                         KEY `users_device_index` (`device`),
-                         KEY `users_is_disable_index` (`is_disable`),
-                         KEY `users_level_index` (`level`),
-                         KEY `users_email_index` (`email`),
-                         KEY `users_mobile_index` (`mobile`),
-                         KEY `users_deleted_at_index` (`deleted_at`),
-                         KEY `users_name_index` (`name`)
+  `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
+  `sn` varchar(100) DEFAULT NULL COMMENT '用户编号',
+  `account` varchar(50) DEFAULT NULL COMMENT '用户账号',
+  `name` varchar(255) NOT NULL COMMENT '用户昵称',
+  `avatar` varchar(250) DEFAULT NULL COMMENT '用户头像',
+  `email` varchar(255) NOT NULL COMMENT '邮箱',
+  `mobile` varchar(20) DEFAULT NULL COMMENT '手机号',
+  `password` varchar(255) DEFAULT NULL COMMENT '登录密码',
+  `device` tinyint(4) DEFAULT '0' COMMENT '注册设备: [10:微信小程序 20:微信公众号 30:手机H5 40:电脑PC 50:苹果APP 60:安卓APP]',
+  `invite_code` varchar(50) DEFAULT NULL COMMENT '邀请码',
+  `is_disable` tinyint(1) DEFAULT '0' COMMENT '是否禁用: [0=否, 1=是]',
+  `level` int(3) NOT NULL DEFAULT '10' COMMENT '会员等级，备用',
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `users_id_uindex` (`id`),
+  UNIQUE KEY `users_sn_uindex` (`sn`),
+  KEY `users_device_index` (`device`),
+  KEY `users_is_disable_index` (`is_disable`),
+  KEY `users_level_index` (`level`),
+  KEY `users_email_index` (`email`),
+  KEY `users_mobile_index` (`mobile`),
+  KEY `users_deleted_at_index` (`deleted_at`),
+  KEY `users_name_index` (`name`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
