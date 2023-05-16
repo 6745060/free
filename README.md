@@ -1,5 +1,4 @@
-# ChatGPT Web
-
+# ChatGPT Web Plus
 
 ## 系统截图
 
@@ -15,25 +14,22 @@
 ![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f008.png)
 
 管理端
-<img width="1439" alt="登录" src="https://user-images.githubusercontent.com/13517412/230766669-9eb38029-e0f3-4ba1-985d-abf0757505b4.png">
-<img width="1277" alt="修改密码" src="https://user-images.githubusercontent.com/13517412/232736883-43cd549e-1d18-4f48-a5f7-af8c65c5718b.png">
-<img width="1279" alt="image" src="https://user-images.githubusercontent.com/13517412/232737651-471e0116-bc04-47ad-ac20-1dd0c14e46f1.png">
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a001.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a002.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a003.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a004.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a005.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a006.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a007.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a008.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a009.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a010.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a011.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a012.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a014.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a015.png)
 
-<img width="1439" alt="image" src="https://user-images.githubusercontent.com/13517412/230752907-586329a6-e395-48ef-9bdf-cce8b8610cdf.png">
 
-<img width="1438" alt="image" src="https://user-images.githubusercontent.com/13517412/230752920-87d24962-9452-496a-ad6f-7d67252a49e8.png">
-<img width="1439" alt="image" src="https://user-images.githubusercontent.com/13517412/230752936-8460e759-6ace-4a89-a146-8d6c5380a536.png">
-<img width="1278" alt="image" src="https://user-images.githubusercontent.com/13517412/232738306-2239a5de-bd70-4c39-84e8-a9825933ef97.png">
-
-<img width="1437" alt="image" src="https://user-images.githubusercontent.com/13517412/230752949-4a92334d-cc69-4d09-b587-a44e92845c57.png">
-<img width="1438" alt="image" src="https://user-images.githubusercontent.com/13517412/230752958-c2a67800-84bd-4c45-b98e-a629042ee5c7.png">
-<img width="1439" alt="image" src="https://user-images.githubusercontent.com/13517412/230752964-b57da9e1-1a42-4967-ae6c-1da1c64c547e.png">
-<img width="1439" alt="image" src="https://user-images.githubusercontent.com/13517412/230752973-2dac4562-51af-4fe5-9138-0331b228cfe6.png">
-<img width="1439" alt="image" src="https://user-images.githubusercontent.com/13517412/230752984-67ff808f-c87e-44f0-9957-bfcb0b6c1802.png">
-
-<img width="1279" alt="image" src="https://user-images.githubusercontent.com/13517412/232735670-2d277962-1312-4900-b6f1-248531835a9e.png">
-
-<img width="1436" alt="image" src="https://user-images.githubusercontent.com/13517412/230753011-125fe575-8947-4d1e-8496-b3afb4f2db7e.png">
 
 为了方便大家沟通交流，同步消息，建了QQ群，目前已有 `1190` 人，群号 `145225165`，申请入群后请及时回复验证码，否则360秒后会被群机器人自动移除群。
 
@@ -43,13 +39,13 @@
 ## 功能列表
 [✓] 支持最新模型 `GPT4.0`以及后续推出的最新模型
 
-[✓] 支持多 `key` 轮询池，一个 `key` 被封或者流量耗尽自动切换下一个有效的 `key`
+[✓] 支持多 `key` 轮询池，一个 `key` 被封或者流量耗尽自动切换下一个有效的 `key`，支持模型绑定
 
 [✓] 支持上下文对话
 
-[✓] 精确统计每次对话消耗的 `tokens`
+[✓] 精确统计每次对话消耗的实际 `tokens`
 
-[✓] 支持百度敏感词过滤，后续会支持腾讯敏感词过滤等主流平台
+[✓] 支持百度敏感词过滤
 
 [✓] 支持自定义回复内容，比如提问当前使用 `GPT` 版本，可以自定义回复内容为 4.0 版本
 
@@ -122,8 +118,8 @@ location /backend/{
     proxy_pass http://127.0.0.1:3000/backend/;
 }
 ```
-访问 `chat.baidu.com` 即可访问前台
-
+前台：`chat.baidu.com`
+后台：`chat.baidu.com/admin`  默认账号/密码 admin/123456
 
 ## 宝塔部署
 - 上传源码
@@ -181,7 +177,8 @@ location / {
 后台：`chat.baidu.com/admin`  默认账号/密码 admin/123456
 
 ## 关联链接
-openai 独享账号推荐购买渠道：https://tomfk.top/buy/14 、 https://tomfk.top/buy/26
+openai独享账号推荐购买渠道：https://tomfk.top/buy/14 、 https://tomfk.top/buy/26
+海外稳定服务器推荐购买渠道：https://cloud.juxw.com/?aff=1651c
 
 自建代理开源项目：https://github.com/easychen/openai-api-proxy/
 
