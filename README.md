@@ -179,6 +179,7 @@ location / {
 
 ## 关联链接
 openai独享账号推荐购买渠道：https://tomfk.top/buy/14 、 https://tomfk.top/buy/26
+
 海外稳定服务器推荐购买渠道：https://cloud.juxw.com/?aff=1651c
 
 自建代理开源项目：https://github.com/easychen/openai-api-proxy/

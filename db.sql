@@ -291,7 +291,7 @@ CREATE TABLE `models` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `driver` varchar(50) NOT NULL COMMENT 'AI驱动',
   `name` varchar(50) DEFAULT NULL COMMENT '模型',
-   `max_tokens`  int  default 0 not null,
+  `max_tokens`  int  default 0 not null,
   `charge_mode` varchar(10) NOT NULL COMMENT '计费模式，times:次数 tokens:流量',
   `charge_rate` int(11) DEFAULT '1' COMMENT '计费比率',
   `sort` int(11) NOT NULL DEFAULT '0',
