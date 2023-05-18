@@ -347,7 +347,7 @@ CREATE TABLE `notices` (
 
 LOCK TABLES `notices` WRITE;
 /*!40000 ALTER TABLE `notices` DISABLE KEYS */;
-INSERT INTO `notices` VALUES (1,'测试11','<p>11111330000</p>',0,'2023-05-12','2023-05-12 15:46:50','2023-05-12 19:58:00',NULL);
+INSERT INTO `notices` VALUES (1,'公告标题','<p>这里是公告内容</p>',0,'2023-05-12','2023-05-12 15:46:50','2023-05-12 19:58:00',NULL);
 /*!40000 ALTER TABLE `notices` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -429,7 +429,7 @@ CREATE TABLE `packages` (
 
 LOCK TABLES `packages` WRITE;
 /*!40000 ALTER TABLE `packages` DISABLE KEYS */;
-INSERT INTO `packages` VALUES (1,'tokens','日卡',NULL,6.00,5.00,'无使用期限',1000,1,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',444,0,NULL,'2023-03-30 20:17:49',NULL),(2,'tokens','周卡','',31.00,30.00,'不限次数',8000,7,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',555,0,NULL,'2023-05-12 11:57:26',NULL),(3,'tokens','月卡',NULL,105.00,100.00,'不限次数',31000,30,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',777,0,NULL,'2023-03-30 20:17:40',NULL),(4,'tokens','季卡','',152.00,150.00,'不限时间',94000,90,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',666,0,NULL,'2023-05-12 11:57:21',NULL),(5,'tokens','年卡','',310.00,300.00,'不限时间',400000,360,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',888,0,NULL,'2023-05-15 09:59:20',NULL);
+INSERT INTO `packages` VALUES (1,'tokens','日卡',NULL,6.00,5.00,'',1000,1,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',444,0,NULL,'2023-03-30 20:17:49',NULL),(2,'tokens','周卡','',31.00,30.00,'',8000,7,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',555,0,NULL,'2023-05-12 11:57:26',NULL),(3,'tokens','月卡',NULL,105.00,100.00,'',31000,30,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',777,0,NULL,'2023-03-30 20:17:40',NULL),(4,'tokens','季卡','',152.00,150.00,'',94000,90,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',666,0,NULL,'2023-05-12 11:57:21',NULL),(5,'tokens','年卡','',310.00,300.00,'',400000,360,'jump','http://element-plus.org/zh-CN/component/text.html#%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95',888,0,NULL,'2023-05-15 09:59:20',NULL);
 /*!40000 ALTER TABLE `packages` ENABLE KEYS */;
 UNLOCK TABLES;
 
