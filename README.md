@@ -1,4 +1,4 @@
-# ChatGPT Web
+# ChatGPT Web Plus 体验版
 
 
 ## 系统截图
