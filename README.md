@@ -1,6 +1,6 @@
 # ChatGPT Web Plus 体验版
 
-> 提示：此版本是可以正常部署的，部署不成功认真看 `readme.md` 文档或者加QQ群 `145225165` 找管理员协助部署
+> 提示：此版本是编译后的非开源版本，可以正常部署体验，部署不成功认真看 `readme.md` 文档或者加QQ群 `145225165` 找管理员协助部署
 ## 系统截图
 
 客户端
@@ -38,6 +38,8 @@
 <img width="679" alt="image" src="https://user-images.githubusercontent.com/13517412/230753144-0c5ea0ee-55a6-4d5d-8282-53fcbc9355c7.png">
 
 ## 功能列表
+[✓] 部署简单，只需要运行服务端文件，不依赖于任何语言环境
+
 [✓] 支持最新模型 `GPT4.0`以及后续推出的最新模型
 
 [✓] 支持多 `key` 轮询池，一个 `key` 被封或者流量耗尽自动切换下一个有效的 `key`，支持模型绑定
@@ -50,17 +52,17 @@
 
 [✓] 支持自定义回复内容，比如提问当前使用 `GPT` 版本，可以自定义回复内容为 4.0 版本
 
-[✓] `prompt` 提示词商店管理
+[✓] 支持角色（`prompt` 提示词）和角色分类
 
 [✓] 卡密支持次卡和流量卡(tokens卡) 两种付费模式，支持自定义卡密有效期
+
+[✓] 支持邀请注册获取免费次数，后台可以分别指定邀请者和被邀请者赠送的积分
 
 [✗] 支持卡密批量生成和导出 `txt`、`csv`、`json`格式
 
 [✓] 管理后台可以配置会员注册时是否需要强制邮箱或者手机号实名验证
 
 [✓] 管理后台可以配置套餐购买时跳转到第三方发卡平台或者是在线支付
-
-[✓] 实现多角色，如对话和绘图
 
 [✗] 支持不同会员等级走不同 `key` 通道，如 `VIP`  会员走专属 `gpt4.0` 通道，普通付费会员走普通 `key` 通道
 
@@ -71,8 +73,6 @@
 [✗] 公告管理，可以在管理后台配置是否开启公告以及公告是否可以关闭
 
 [✗] 实现联网搜索
-
-[✓] 支持分享获取免费次数
 
 [✗] 支持分销
 
@@ -98,7 +98,7 @@ server_name chat.baidu.com;
 index index.html index.htm default.htm default.html;
 root /www/wwwroot/chagpt-plus/amd64.linux;
     
-  location / {
+location / {
       proxy_pass http://127.0.0.1:3000;
       proxy_set_header Host 127.0.0.1:$server_port;
       proxy_set_header X-Real-IP $remote_addr;
@@ -113,7 +113,7 @@ root /www/wwwroot/chagpt-plus/amd64.linux;
       proxy_http_version 1.1;
       proxy_set_header Upgrade $http_upgrade;
       proxy_set_header Connection "upgrade";
-  }
+ }
 
 location /backend/{
     proxy_pass http://127.0.0.1:3000/backend/;
@@ -135,7 +135,7 @@ location /backend/{
   点击提交后找到新添加的数据库，点击 `导入` 按钮弹出上传框，点击从本地上传，选择 `db.sql` 文件进行上传
   ![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230515/0002.png)
 
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230515/0003.png)
+  ![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230515/0003.png)
 
 - 修改配置信息
 
