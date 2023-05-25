@@ -1,1 +1,0 @@
-import{t as n}from"./@vueuse_shared@9.13.0_vue@3.3.2-e741950b.js";import{r as o}from"./@vue_reactivity@3.3.2-ae2838a1.js";function a(u,r){const e=o(r==null?void 0:r.initialValue),s=u.subscribe({next:i=>e.value=i,error:r==null?void 0:r.onError});return n(()=>{s.unsubscribe()}),e}export{a as u};
