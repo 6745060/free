@@ -1,0 +1,1 @@
+"stream"in Blob.prototype||Object.defineProperty(Blob.prototype,"stream",{value(){return new Response(this).body}});var o=new Uint32Array(256);for(let e=0;e<256;++e){let t=e;for(let r=0;r<8;++r)t=t>>>1^(1&t&&3988292384);o[e]=t}new TextDecoder("utf8",{fatal:1});
