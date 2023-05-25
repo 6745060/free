@@ -1,1 +1,0 @@
-import{r}from"./index.83cc6034.js";function o(t){return r.get({url:"/prompt/list",params:t})}function p(t){return r.get({url:"/prompt/detail",params:t})}function u(t){return r.post({url:"/prompt/update",params:t})}function n(t){return r.get({url:"/prompt/delete",params:t})}export{o as a,p as g,n as r,u as s};
