@@ -4,32 +4,41 @@
 ## 系统截图
 
 客户端
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f001.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f002.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f003.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f004.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f005.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f006.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f007.png)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/注册.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/登录.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/模型选择.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/个人中心-关于.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/个人中心-套餐.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/个人中心-积分.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/角色中心1.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/角色中心2.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/挑选角色后问答1.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/挑选角色后问答2.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/绘图1.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/绘图2.jpg)
 
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/f008.png)
 
 管理端
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a001.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a002.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a003.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a004.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a005.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a006.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a007.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a008.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a009.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a010.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a011.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a012.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a014.png)
-![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230516/a015.png)
-
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/仪表盘.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/个人中心.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/模型管理.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/key池列表.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/用户列表.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/添加用户.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/编辑用户.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/积分充值.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/对话列表1.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/对话列表2.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/套餐列表.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/添加套餐.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/生成卡券.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/导出卡券.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/角色列表.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/系统设置-存储设置.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/系统设置-积分设置.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/系统设置-基础设置.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/系统设置-邮箱设置.jpg)
+![](https://gouguoyin.oss-cn-beijing.aliyuncs.com/tools/images/2130706433/20230526/系统设置-注册设置.jpg)
 
 
 为了方便大家沟通交流，同步消息，建了QQ群，群号 `145225165`，申请入群后请及时回复验证码，否则360秒后会被群机器人自动移除群。
@@ -40,13 +49,15 @@
 ## 功能列表
 [✓] 部署简单，只需要运行服务端文件，不依赖于任何语言环境
 
-[✓] 支持最新模型 `GPT4.0` 以及后续推出的最新模型
+[✓] 内存和 `CPU` 占用极低，1核1G配置的服务器 `CPU` 占用 `10%` 左右，内存占用 `50%` 左右
 
-[✓] 支持 `Midjourney` 绘图
+[✓] 支持 `chatgpt` 最新模型 `GPT4.0` 以及后续推出的最新模型
+
+[✓] 支持 `Midjourney` v4、v5、v5.1 模型绘图，支持普通、高清和超清清晰度
 
 [✓] 支持多 `key` 轮询池，一个 `key` 被封或者流量耗尽自动切换下一个有效的 `key`，支持模型绑定
 
-[✓] 支持上下文对话
+[✓] 支持上下文对话，默认读取最近5条对话记录
 
 [✓] 精确统计每次对话消耗的实际 `tokens`
 
@@ -56,17 +67,25 @@
 
 [✓] 支持角色（`prompt` 提示词）和角色分类
 
-[✓] 卡密支持次卡和流量卡(tokens卡) 两种付费模式，支持自定义卡密有效期
+[✓] 卡密支持 `次卡` 和 `流量卡(tokens卡)` 两种付费模式
+
+[✓] 卡密支持设置有效期或永久有效
 
 [✓] 支持邀请注册获取免费次数，后台可以分别指定邀请者和被邀请者赠送的积分
 
 [✓] 支持卡密批量生成和导出 `txt` 格式
 
+[✓] 管理后台可以配置不同注册方式(同时允许邮箱和手机号注册、只允许邮箱注册、只允许手机号注册、不允许注册，只能登录)
+
 [✓] 管理后台可以配置会员注册时是否需要强制邮箱或者手机号实名验证
 
-[✓] 管理后台可以配置套餐购买时跳转到第三方发卡平台或者是在线支付
+[✓] 管理后台支持添加用户、编辑用户、禁用用户和重置密码
 
-[✗] 支持不同会员等级走不同 `key` 通道，如 `VIP`  会员走专属 `gpt4.0` 通道，普通付费会员走普通 `key` 通道
+[✓] 管理后台可以配置不同套餐购买方式(跳转第三方发卡网站、在线购买、线下购买)
+
+[✗] 支持不同会员等级走不同 `key` 通道(`VIP` 会员走专属 `gpt4.0` 通道，普通付费会员走普通 `key` 通道)
+
+[✗] 支持公告管理，可以设置公告的截止日期
 
 [✗] 支持多支付渠道，如微信、支付宝
 
