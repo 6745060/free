@@ -1,0 +1,1 @@
+import{r as e}from"./index.9c35de43.js";function o(){return e.get({url:"/setting/storage/list"})}function g(t){return e.get({url:"/setting/storage/detail",params:t})}function i(t){return e.post({url:"/setting/storage/update",params:t})}var r=(t=>(t.LOCAL="local",t.QINIU="qiniu",t.ALIYUN="oss",t.QCLOUD="cos",t))(r||{});export{r as S,o as a,g,i as s};

@@ -191,19 +191,23 @@ INSERT INTO `diy_reply` (`id`, `keywords`, `content`, `is_disable`, `created_at`
 -- 表的结构 `images`
 --
 
+DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) DEFAULT '0' COMMENT '用户id',
   `key_id` int(11) DEFAULT '0' COMMENT 'key池id',
   `model` varchar(20) DEFAULT NULL COMMENT '所用模型',
   `charge_mode` varchar(10) DEFAULT NULL COMMENT '计费模式',
   `charge_rate` int(11) DEFAULT '0' COMMENT '换算倍数',
   `prompt` varchar(250) DEFAULT NULL COMMENT '提示词',
+  `status` varchar(255) DEFAULT NULL COMMENT '当前状态',
+  `reason` text COMMENT '出错原因',
   `image_url` text COMMENT '图片URL',
   `total_points` int(11) DEFAULT '0' COMMENT '消耗总积分',
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
-  `deleted_at` datetime DEFAULT NULL
+  `deleted_at` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
@@ -264,6 +268,7 @@ CREATE TABLE `models` (
   `name` varchar(50) DEFAULT NULL COMMENT '模型',
   `alias` varchar(50) DEFAULT NULL,
   `max_tokens` int(11) NOT NULL DEFAULT '0',
+  `min_points` int(11) NOT NULL DEFAULT '0',
   `charge_mode` varchar(10) NOT NULL COMMENT '计费模式，times:次数 tokens:流量',
   `charge_rate` int(11) DEFAULT '1' COMMENT '计费比率',
   `sort` int(11) NOT NULL DEFAULT '0',
