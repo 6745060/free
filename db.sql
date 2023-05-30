@@ -48,7 +48,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `root`, `name`, `avatar`, `account`, `password`, `login_time`, `login_ip`, `multipoint_login`, `disable`, `created_at`, `updated_at`, `deleted_at`) VALUES
-(1, 1, '系统管理员', 'https://chatgpt-web.oss-cn-beijing.aliyuncs.com/avatar/admin1.jpg', 'admin', '$argon2id$v=19$m=65536,t=4,p=1$4d29CZVOdyA6Fb2TWgoP1A$UKZnQ3E4V6hVJq71GuL945Zf2tJUQcshn5ng2f5blYg', NULL, '', 1, 0, '2023-03-16 00:00:00', '2023-05-18 17:56:49', NULL);
+(1, 1, '系统管理员', 'https://chatgpt-web.oss-cn-beijing.aliyuncs.com/avatar/admin1.jpg', 'admin', '$argon2id$v=19$m=65536,t=4,p=1$1WHi3hqbHD7AwGgMISmc9g$iCtzTTt/IHR0EAoh2vJfRs1YoKC++/f2TNyv4xwFqQU', NULL, '', 1, 0, '2023-03-16 00:00:00', '2023-05-18 17:56:49', NULL);
 
 -- --------------------------------------------------------
 
