@@ -254,7 +254,7 @@ CREATE TABLE `keys` (
 INSERT INTO `keys` (`id`, `key`, `model`, `proxy_url`, `status`, `tokens`, `times`, `is_plus`, `is_disable`, `created_at`, `updated_at`, `deleted_at`) VALUES
 (1, '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', 'gpt-3.5-turbo', NULL, 10, 0000000000, 0, 0, 1, '2023-03-23 20:51:32', '2023-03-23 20:51:37', '2023-05-15 13:13:40'),
 (2, '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', 'gpt-3.5-turbo', '', 20, 0000000000, 0, 0, 0, NULL, '2023-05-17 16:18:01', NULL),
-(8, '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', 'gpt-3.5-turbo', '', 10, 0000323604, 0, 0, 0, '2023-04-12 00:41:33', '2023-05-25 17:08:53', NULL)
+(8, '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', 'gpt-3.5-turbo', '', 10, 0000323604, 0, 0, 0, '2023-04-12 00:41:33', '2023-05-25 17:08:53', NULL);
 
 -- --------------------------------------------------------
 
@@ -733,6 +733,3 @@ ALTER TABLE `users`
   MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
