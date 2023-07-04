@@ -174,7 +174,7 @@ location / {
 后台：`chat.baidu.com/admin`  默认账号/密码 admin/123456
 
 ## 关联链接
-openai独享账号推荐购买渠道：https://tomfk.top/buy/14 、 https://tomfk.top/buy/26
+openai独享账号推荐购买渠道：https://tomfk.top/buy/26
 
 海外稳定服务器推荐购买渠道：https://cloud.juxw.com/?aff=1651c
 
